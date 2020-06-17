@@ -1,0 +1,19 @@
+{
+  "name": "@jafish/utils",
+  "version": "1.0.0",
+  "description": "通用工具方法",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^3.9.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/a526800921/jafish_utils.git"
+  }
+}
