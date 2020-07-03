@@ -16,7 +16,7 @@ export const verifyNumber = (num: number, { minLength = 0, maxLength = 0 } = {})
 }
 
 // 验证邮箱
-export const verifyMail = (mail: string): boolean => /^[\w-]+@\w+\.\w+$/.test(mail || '')
+export const verifyMail = (mail: string): boolean => /^[\w-]+@(\w+\.)+\w+$/.test(mail || '')
 
 // 验证身份证
 export const verifyIDCard = (idCard: string): boolean => /^\d{17}\w/.test(idCard || '')

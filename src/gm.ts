@@ -39,12 +39,16 @@ const getItem = (key: string, { long }): any => {
         return data
     }
 }
+const removeItem = (key: string, { long }): any => (long ? localStorage : sessionStorage).removeItem(key)
+
 // 临时缓存
 export const setItemUseSession = (key: string, value: any) => setItem(key, value, { long: false })
 export const getItemUseSession = (key: string) => getItem(key, { long: false })
+export const removeItemUseSession = (key: string) => removeItem(key, { long: false })
 // 永久缓存
 export const setItemUseLocal = (key: string, value: any) => setItem(key, value, { long: true })
 export const getItemUseLocal = (key: string) => getItem(key, { long: true })
+export const removeItemUseLocal = (key: string) => removeItem(key, { long: true })
 
 // 填充
 const fillNum = (num: number): string => num < 10 ? `0${num}` : `${num}`

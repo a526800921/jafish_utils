@@ -5,8 +5,10 @@ export {
     queryToObj,
     getItemUseLocal,
     setItemUseLocal,
+    removeItemUseLocal,
     getItemUseSession,
     setItemUseSession,
+    removeItemUseSession,
     formatTime,
     fillArray,
 } from './gm'
