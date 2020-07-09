@@ -17,6 +17,16 @@ export {
     verifyMail,
     verifyNumber,
     verifyPhone,
+
+    isNumber,
+    isNaN,
+    isObject,
+    isArray,
+    isBoolean,
+    isFunction,
+    isNull,
+    isString,
+    isUndefined,
 } from './verify'
 export {
     addSubscribe,

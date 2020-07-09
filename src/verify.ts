@@ -21,4 +21,15 @@ export const verifyMail = (mail: string): boolean => /^[\w-]+@(\w+\.)+\w+$/.test
 // 验证身份证
 export const verifyIDCard = (idCard: string): boolean => /^\d{17}\w/.test(idCard || '')
 
+// 验证基础类型
+export const isUndefined: Jafish_Utils.VerifyResult = data => data === void 0
+export const isNull: Jafish_Utils.VerifyResult = data => data === null
+export const isBoolean: Jafish_Utils.VerifyResult = data => typeof data === 'boolean'
+export const isNumber: Jafish_Utils.VerifyResult = data => typeof data === 'number'
+export const isNaN: Jafish_Utils.VerifyResult = data => isNumber(data) && data !== data
+export const isString: Jafish_Utils.VerifyResult = data => typeof data === 'string'
+export const isFunction: Jafish_Utils.VerifyResult = data => typeof data === 'function'
+export const isObject: Jafish_Utils.VerifyResult = data => Object.prototype.toString.call(data) === '[object Object]'
+export const isArray: Jafish_Utils.VerifyResult = data => Array.isArray(data)
+
 

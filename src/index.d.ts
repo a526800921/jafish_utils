@@ -32,4 +32,6 @@ declare namespace Jafish_Utils {
     interface Subscibes {
         [key: string]: SubscribeItem
     }
+
+    type VerifyResult = (data: any) => boolean
 }

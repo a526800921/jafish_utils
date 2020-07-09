@@ -6,7 +6,7 @@ export const deepValue = data => JSON.parse(JSON.stringify(data))
 export const queryToStr = (data: Jafish_Utils.Obj): string => {
     if (!data) return ''
 
-    const query = Object.keys(data).map(key => `${key}=${data[key]}`).join('&')
+    const query = Object.keys(data).map(key => `${key}=${encodeURIComponent(data[key])}`).join('&')
 
     return query.length > 0 ? `?${query}` : ''
 }
