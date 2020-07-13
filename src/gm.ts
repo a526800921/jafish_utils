@@ -29,13 +29,10 @@ const setItem = (key: string, value: any, { long }) => (long ? localStorage : se
 const getItem = (key: string, { long }): any => {
     const data = (long ? localStorage : sessionStorage).getItem(key)
 
-    if (data === null) return void 0
-
     try {
         return JSON.parse(data)
     } catch (error) {
-        console.error(error)
-
+        console.error('getItem', error)
         return data
     }
 }
