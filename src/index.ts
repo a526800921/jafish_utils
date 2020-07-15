@@ -11,6 +11,7 @@ export {
     removeItemUseSession,
     formatTime,
     fillArray,
+    urlParse,
 } from './gm'
 export {
     verifyIDCard,

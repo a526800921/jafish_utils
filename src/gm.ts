@@ -80,3 +80,35 @@ export const fillArray = (arr: any[], fill = 3): any[] => {
 
 	return arr.concat(fillArr)
 }
+
+// 解析url
+export const urlParse = (url: string) => {
+    let origin: string = ''
+    let hash: string = ''
+    let pathname: string = ''
+    let search: string = ''
+
+    const path = url.replace(/^\w+:\/\/[^/]+/, '')
+    const searchIndex = path.indexOf('?')
+    const hashIndex = path.indexOf('#')
+
+    origin = url.slice(0, url.length - path.length)
+
+    if (searchIndex === -1 && hashIndex === -1) pathname = path
+    else if (searchIndex === -1) {
+        pathname = path.slice(0, hashIndex)
+        hash = path.slice(hashIndex)
+    }
+    else if (hashIndex === -1) {
+        pathname = path.slice(0, searchIndex)
+        search = path.slice(searchIndex)
+    }
+    else {
+        pathname = path.slice(0, searchIndex)
+        search = path.slice(searchIndex, hashIndex)
+        hash = path.slice(hashIndex)
+    }
+
+    return { origin, hash, pathname, search }
+}
+
