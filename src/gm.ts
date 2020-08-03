@@ -12,7 +12,8 @@ export const queryToStr = (data: Jafish_Utils.Obj): string => {
 }
 // 查询参数转对象
 export const queryToObj = (url: string): Jafish_Utils.Obj => {
-    const search = url.split('?')[1]
+    let search: string = url.split('?')[1] || ''
+    search = search.split('#')[0]
 
     return search ? search.split('&').reduce((a, b) => {
         const [key, value] = b.split('=')
