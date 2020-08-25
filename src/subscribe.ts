@@ -26,4 +26,15 @@ export const addSubscribe = (key: string, callback: Function): Function => {
 }
 // 获取订阅key下面的方法
 export const getSubscribe = (key: string): Function[] => (subscibes[key] ? subscibes[key].queue : []).map(item => item.callback)
+// 执行订阅key下面的方法
+export const runSubscribe = (key: string, ...arg: any[]): void => {
+	const fns = getSubscribe(key)
 
+	for (let i = 0; i < fns.length; i++) {
+		try {
+			fns[i](...arg)
+		} catch (error) {
+			console.error(`runSubscribe ${key} error:`, error)
+		}
+	}
+}

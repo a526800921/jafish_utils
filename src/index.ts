@@ -32,6 +32,7 @@ export {
 export {
     addSubscribe,
     getSubscribe,
+    runSubscribe,
 } from './subscribe' 
 export {
     onScroll,

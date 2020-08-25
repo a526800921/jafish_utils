@@ -1,6 +1,6 @@
 {
   "name": "@jafish/utils",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "通用工具方法",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
