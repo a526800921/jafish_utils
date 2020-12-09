@@ -19,7 +19,7 @@ export const verifyNumber = (num: number, { minLength = 0, maxLength = 0 } = {})
 export const verifyMail = (mail: string): boolean => /^[\w-]+@(\w+\.)+\w+$/.test(mail || '')
 
 // 验证身份证
-export const verifyIDCard = (idCard: string): boolean => /^\d{17}\w/.test(idCard || '')
+export const verifyIDCard = (idCard: string): boolean => /^\d{17}\w$/.test(idCard || '')
 
 // 验证基础类型
 export const isUndefined: Jafish_Utils.VerifyResult = data => data === void 0
