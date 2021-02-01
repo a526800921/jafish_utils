@@ -38,4 +38,12 @@ export {
     onScroll,
     onScrollLower,
 } from './scroll'
+export {
+    isAndroid,
+    isIOS,
+    isIpad,
+    isIphone,
+    isMac,
+    isWechat,
+} from './platform'
 
