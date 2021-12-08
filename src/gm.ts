@@ -12,7 +12,7 @@ export const queryToStr = (data: Jafish_Utils.Obj): string => {
 }
 // 查询参数转对象
 export const queryToObj = (url: string): Jafish_Utils.Obj => {
-    let search: string = url.split('?')[1] || ''
+    let search: string = url.indexOf('?') > -1 ? url.split('?')[1] : url
     search = search.split('#')[0]
 
     return search ? search.split('&').reduce((a, b) => {
@@ -20,7 +20,7 @@ export const queryToObj = (url: string): Jafish_Utils.Obj => {
 
         if (!key || !value) return a
 
-        a[key] = value
+        a[key] = decodeURIComponent(value)
 
         return a
     }, {}) : {}
@@ -74,12 +74,12 @@ export const formatTime = (time: string | number | Date, { start = 0, end = void
 
 // 填充数组，达到整数倍
 export const fillArray = (arr: any[], fill = 3): any[] => {
-	if (arr.length % fill === 0) return arr
+    if (arr.length % fill === 0) return arr
 
-	const diff = arr.length % fill
-	const fillArr = new Array(fill - diff).fill(null)
+    const diff = arr.length % fill
+    const fillArr = new Array(fill - diff).fill(null)
 
-	return arr.concat(fillArr)
+    return arr.concat(fillArr)
 }
 
 // 解析url
